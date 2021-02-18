@@ -1,0 +1,100 @@
+ 1/ Créer la base donnée sous nom "boutique".
+CREATE DATABASE boutique
+
+ 2/ Création des tables (Manufacturers, Products), voir fichier build-shema
+
+CREATE TABLE Manufacturers (
+  Code INTEGER,
+  Name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (Code)   
+);
+ insert into Manufacturers
+INSERT INTO Manufacturers(Code,Name) VALUES(1,'Sony');
+INSERT INTO Manufacturers(Code,Name) VALUES(2,'Creative Labs');
+INSERT INTO Manufacturers(Code,Name) VALUES(3,'Hewlett-Packard');
+INSERT INTO Manufacturers(Code,Name) VALUES(4,'Iomega');
+INSERT INTO Manufacturers(Code,Name) VALUES(5,'Fujitsu');
+INSERT INTO Manufacturers(Code,Name) VALUES(6,'Winchester');
+
+CREATE TABLE Products (
+  Code INTEGER,
+  Name VARCHAR(255) NOT NULL ,
+  Price DECIMAL NOT NULL ,
+  Manufacturer INTEGER NOT NULL,
+  PRIMARY KEY (Code), 
+  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
+) ENGINE=INNODB;
+
+ insert into Products
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
+
+ 3/ Sélectionnez les noms de tous les produits du magasin.
+SELECT Name FROM Products
+
+ 4/ Sélectionner les noms et les prix de tous les produits du magasin.
+SELECT Name, Price FROM Products
+
+ 5/ Sélectionner le nom des produits dont le prix est inférieur ou égal à 200 $.
+SELECT Name FROM Products WHERE Price >= 200
+
+ 6/ Sélectionnez tous les produits dont le prix est compris entre 60 et 120 dollars.
+SELECT * FROM Products WHERE Price BEFORE 60 AND 120
+
+ 7/ Sélectionnez le nom et le prix en cents (c'est-à-dire que le prix doit être multiplié par 100).
+SELECT  Name, CONCAT(Price*100, 'cents') FROM products;
+
+ 8/ Calculer le prix moyen de tous les produits.
+SELECT AVG(price) FROM products  ////or////  SELECT SUM(price) / COUNT(price) FROM products
+
+ 9/ Calculer le prix moyen de tous les produits dont le code fabricant est égal à 2.
+SELECT SUM(price) / COUNT(price) FROM products WHERE  Manufacturer=2
+
+ 10/ Calculer le nombre de produits dont le prix est supérieur ou égal à 180 dollars.
+SELECT  count(*) FROM products WHERE Price>=180
+
+ 11/ Sélectionner le nom et le prix de tous les produits dont le prix est supérieur ou égal à 180 dollars, et trier d'abord par prix (par ordre décroissant), puis par nom (par ordre croissant).
+SELECT name, price FROM products WHERE  Price>=180 ORDER BY Price DESC , Name ASC
+
+ 12/ Sélectionnez toutes les données des produits, y compris toutes les données relatives au fabricant de chaque produit.
+ SELECT x.*, y.Name FROM products x JOIN  manufacturers y ON (x.Manufacturer = y.Code)
+ 
+ 13/ Sélectionnez le nom du produit, le prix et le nom du fabricant de tous les produits.
+SELECT p.Name , p.Price, B.Name FROM products p INNER JOIN manufacturers B
+ON P.manufacturer = b.code
+
+ 14/ Sélectionnez le prix moyen des produits de chaque fabricant, en indiquant uniquement le code du fabricant.
+SELECT manufacturer , AVG (Price) 'Prix moyen' FROM products CONCAT BY manufacturer
+
+ 15/ Sélectionnez le prix moyen des produits de chaque fabricant, en indiquant le nom du fabricant.
+SELECT p.code , m.Name , AVG (p.Price) FROM products p INNER JOIN manufacturers ON p.manufacturer = m.code CONCAT BY m.Name, p.Code
+
+ 16/ Sélectionnez les noms des fabricants dont les produits ont un prix moyen supérieur ou égal à 150 $.
+SELECT m.Name, AVG(p.Price) FROM products p JOIN manufacturers m ON p.manufacturer = m.code CONCAT BY m.code AVG (p.Price) >= 150
+
+ 17/ Sélectionnez le nom et le prix du produit le moins cher.
+SELECT Name, Price FROM products WHERE price = (SELECT MIN(price) FROM products)
+
+ 18/ Sélectionnez le nom de chaque fabricant ainsi que le nom et le prix de son produit le plus cher.
+SELECT m.Name, P.Name, P.price FROM products p JOIN manufacturers m ON p.manufacturer = m.code GROUP BY p.manufacturer HAVING MAX (p.price) = (SELECT MAX(price) FROM products)
+
+ 19/ Ajouter un nouveau produit : Loudspeakers, 70 $, manufacter 2 
+INSERT INTO products (code, Name, price, manufacturer) VALUES ('11', 'Loudspeakers', '70', '2')
+
+ 20/ Mettre à jour le nom du produit 8 en "laser Print".
+UPDATE products SET Name = WHERE code = 8
+
+ 21/ Appliquer une remise de 10 % à tous les produits.
+UPDATE products SET Price = Price - (Price * 0.1 )
+
+ 22/ Appliquer une remise de 10 % à tous les produits dont le prix est supérieur ou égal à 120 $.
+UPDATE products SET Price = Price - (Price * 0.1 ) WHERE Price >= 120 
+ 
