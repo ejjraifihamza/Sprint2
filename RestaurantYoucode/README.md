@@ -2,25 +2,19 @@
 
 ## Tools 👇
 
-- ```Adobe XD
+- Adobe XD
 
-  ```
-- ```HTML
+- HTML
 
-  ```
-- ```CSS (SASS)
+- CSS (SASS)
 
-  ```
-- ```JS
+- JS
 
-  ```
-- ```PHP
-
-  ```
+- PHP
 
 ## uml class
 
-- [lucid.app](https://lucid.app/lucidchart/0ffcb28c-302d-49e5-a4f3-48a7e3460bba/edit?page=HWEp-vi-RSFO#)
+- [lucid.app] (https://lucid.app/lucidchart/0ffcb28c-302d-49e5-a4f3-48a7e3460bba/edit?page=HWEp-vi-RSFO#)
 
 ## For best working
 
@@ -28,7 +22,7 @@
 
 ## if you wanna make change
 
-- Install [NPM](https://docs.npmjs.com/)
+- Install [NPM] (https://docs.npmjs.com/)
 - Change directory to RestaurantYoucode
 - Install all Dependencie using this command 👇
 
@@ -44,8 +38,8 @@
 
 ## SASSFLOW
 
-- [BEM](http://getbem.com/introduction/) methodology
-- [The 7-1](https://gist.github.com/rveitch/84cea9650092119527bc) methodology
+- [BEM] (http://getbem.com/introduction/) methodology
+- [The 7-1] (https://gist.github.com/rveitch/84cea9650092119527bc) methodology
 - use `rem` & `%` (change root font size to 10px) => (10px = 1rem)
 - for the variables go to the `variables.scss` file in utils folder. prefere **css costum preprety**
 - **Media Query** use it in the block declaration.
