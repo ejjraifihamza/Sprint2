@@ -1,0 +1,611 @@
+@import url("https://fonts.googleapis.com/css2?family=Stick&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Psoppins%26display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+:root {
+  /* Colors Costum Proprety*/
+  --color-main: #D9803E;
+  /* Font Family Costum Proprety*/
+  --font-family-stick: 'Stick', sans-serif;
+  --font-family-open-sans: 'Open Sans', sans-serif;
+  --font-family-merienda: 'Merienda', cursive;
+  --font-family-poppins: "Poppins", sans-serif;
+  --font-size-main: 3rem; }
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  z-index: 5; }
+
+.logo img {
+  width: 30%;
+  padding-top: 20px; }
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  color: var(--color-main); }
+
+.nav-links li {
+  list-style: none; }
+
+.nav-links a {
+  color: #d9803e;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px; }
+
+.burger {
+  display: none; }
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #e15146;
+  margin: 5px;
+  transition: all 0.3s ease; }
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%; }
+  .logo img {
+    width: 30%;
+    padding-top: 20px;
+    padding-left: 30px; } }
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; }
+  .logo img {
+    width: 30%;
+    padding-top: 20px;
+    padding-left: 30px; }
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in; }
+  .nav-links li {
+    opacity: 0; }
+  .burger {
+    display: block;
+    cursor: pointer; } }
+
+.nav-active {
+  transform: translateX(0%); }
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px); }
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px); }
+
+.toggle .line2 {
+  opacity: 0; }
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px); }
+
+.main {
+  width: 100%;
+  padding-top: 10rem; }
+
+.main__tasteful {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  .main__tasteful .tasteful__one {
+    width: 90%;
+    border-radius: 17rem; }
+    @media screen and (max-width: 500px) {
+      .main__tasteful .tasteful__one {
+        display: none; } }
+  .main__tasteful .tasteful__two {
+    display: none; }
+    @media screen and (max-width: 500px) {
+      .main__tasteful .tasteful__two {
+        display: block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-radius: 10rem; } }
+
+.main__food-search {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem; }
+  .main__food-search .food-search__container {
+    background-image: url(../img/search.png);
+    width: 90%;
+    margin: auto;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 7% 0;
+    border-radius: 12rem; }
+    .main__food-search .food-search__container .container__search {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5rem; }
+      .main__food-search .food-search__container .container__search .search__button {
+        font-family: var(--font-family-merienda);
+        background-color: #f5b380;
+        border-radius: 2rem;
+        font-size: 2rem;
+        width: 10rem; }
+        @media screen and (max-width: 700px) {
+          .main__food-search .food-search__container .container__search .search__button {
+            font-size: 2rem; } }
+        @media screen and (max-width: 580px) {
+          .main__food-search .food-search__container .container__search .search__button {
+            font-size: 15px;
+            width: 8rem; } }
+        @media screen and (max-width: 440px) {
+          .main__food-search .food-search__container .container__search .search__button {
+            font-size: 15px;
+            width: 8rem; } }
+      .main__food-search .food-search__container .container__search .search__button:hover {
+        background-color: #d37a37; }
+    .main__food-search .food-search__container .container__search input[type="search"] {
+      font-family: var(--font-family-merienda);
+      width: 50%;
+      padding: 1%;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 3rem; }
+      @media screen and (max-width: 700px) {
+        .main__food-search .food-search__container .container__search input[type="search"] {
+          font-size: 2rem; } }
+      @media screen and (max-width: 580px) {
+        .main__food-search .food-search__container .container__search input[type="search"] {
+          font-size: 15px; } }
+      @media screen and (max-width: 440px) {
+        .main__food-search .food-search__container .container__search input[type="search"] {
+          font-size: 10px; } }
+
+.main__meals {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem; }
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1%;
+  background-image: url(../img/see.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 17rem; }
+
+.size {
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
+  @media only screen and (max-width: 768px) {
+    .size {
+      font-size: 2rem; } }
+
+.box-3 {
+  width: 28%;
+  float: left;
+  margin: 2%; }
+  @media only screen and (max-width: 890px) {
+    .box-3 {
+      width: 100%;
+      margin: 4% auto; } }
+
+.float-container {
+  position: relative; }
+
+.img-responsive {
+  width: 100%; }
+
+.img-curve {
+  border-radius: 15px;
+  width: 250px;
+  border: var(--color-main) solid 2px; }
+
+.float-text {
+  position: absolute;
+  font-size: 20px;
+  bottom: -20px;
+  left: 40%; }
+  @media only screen and (max-width: 890px) {
+    .float-text {
+      left: 45%; } }
+
+.text-white {
+  color: black; }
+
+.clearfix {
+  clear: both;
+  float: none; }
+
+.main__user {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem; }
+  .main__user .user__shap {
+    width: 90%;
+    border-radius: 17rem;
+    background-image: url("../img/login.png");
+    margin: auto;
+    padding-bottom: 3rem; }
+    @media screen and (max-width: 786px) {
+      .main__user .user__shap {
+        background-size: cover; } }
+  .main__user .user__title {
+    font-family: var(--font-family-merienda);
+    font-size: var(--font-size-main);
+    padding-top: 2rem;
+    text-shadow: 1px 1px 15px black;
+    color: black; }
+    @media screen and (max-width: 700px) {
+      .main__user .user__title {
+        font-size: 2rem; } }
+    @media screen and (max-width: 580px) {
+      .main__user .user__title {
+        font-size: 15px; } }
+    @media screen and (max-width: 440px) {
+      .main__user .user__title {
+        font-size: 10px; } }
+  .main__user .user__creat {
+    font-family: var(--font-family-merienda);
+    font-size: var(--font-size-main);
+    padding-top: 2rem;
+    text-shadow: 1px 1px 15px black; }
+    @media screen and (max-width: 700px) {
+      .main__user .user__creat {
+        font-size: 2rem; } }
+    @media screen and (max-width: 580px) {
+      .main__user .user__creat {
+        font-size: 15px; } }
+    @media screen and (max-width: 440px) {
+      .main__user .user__creat {
+        font-size: 10px; } }
+    .main__user .user__creat .creat {
+      text-decoration: none;
+      color: var(--color-main);
+      text-shadow: none; }
+    .main__user .user__creat .creat:hover {
+      color: #d35a04; }
+  .main__user .user__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .main__user .user__login input[type="text"],
+    .main__user .user__login input[type="password"] {
+      width: 50%;
+      padding: 12px 20px;
+      margin: auto;
+      display: inline-block;
+      border: 2px solid var(--color-main);
+      border-radius: 15px;
+      box-sizing: border-box;
+      font-family: var(--font-family-merienda); }
+    .main__user .user__login button {
+      width: 20%;
+      text-align: center;
+      margin-top: 2rem;
+      border-radius: 15px;
+      font-size: 3rem;
+      font-family: var(--font-family-merienda); }
+      @media screen and (max-width: 700px) {
+        .main__user .user__login button {
+          width: 15%;
+          font-size: 2rem; } }
+      @media screen and (max-width: 520px) {
+        .main__user .user__login button {
+          font-size: 15px; } }
+    .main__user .user__login button:hover {
+      opacity: 0.8; }
+    .main__user .user__login .login__usname {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2rem; }
+      @media screen and (max-width: 700px) {
+        .main__user .user__login .login__usname {
+          flex-direction: column; } }
+      .main__user .user__login .login__usname .usname__text {
+        font-size: 2rem;
+        font-family: var(--font-family-merienda);
+        padding-top: 5px; }
+        @media screen and (max-width: 700px) {
+          .main__user .user__login .login__usname .usname__text {
+            font-size: 2rem; } }
+        @media screen and (max-width: 580px) {
+          .main__user .user__login .login__usname .usname__text {
+            font-size: 15px; } }
+        @media screen and (max-width: 440px) {
+          .main__user .user__login .login__usname .usname__text {
+            font-size: 10px; } }
+      .main__user .user__login .login__usname .usname__put {
+        width: 40rem; }
+        @media screen and (max-width: 520px) {
+          .main__user .user__login .login__usname .usname__put {
+            width: 30rem;
+            height: 20px; } }
+        @media screen and (max-width: 440px) {
+          .main__user .user__login .login__usname .usname__put {
+            width: 20rem; } }
+    .main__user .user__login .login__password {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2rem; }
+      @media screen and (max-width: 700px) {
+        .main__user .user__login .login__password {
+          flex-direction: column; } }
+      .main__user .user__login .login__password .password__text {
+        font-size: 2rem;
+        font-family: var(--font-family-merienda);
+        padding-top: 5px; }
+        @media screen and (max-width: 700px) {
+          .main__user .user__login .login__password .password__text {
+            font-size: 2rem; } }
+        @media screen and (max-width: 580px) {
+          .main__user .user__login .login__password .password__text {
+            font-size: 15px; } }
+        @media screen and (max-width: 440px) {
+          .main__user .user__login .login__password .password__text {
+            font-size: 10px; } }
+      .main__user .user__login .login__password .password__put {
+        width: 40rem; }
+        @media screen and (max-width: 520px) {
+          .main__user .user__login .login__password .password__put {
+            width: 30rem;
+            height: 20px; } }
+        @media screen and (max-width: 440px) {
+          .main__user .user__login .login__password .password__put {
+            width: 20rem; } }
+    .main__user .user__login .login__tell {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2rem; }
+      @media screen and (max-width: 700px) {
+        .main__user .user__login .login__tell {
+          flex-direction: column; } }
+      .main__user .user__login .login__tell .tell__text {
+        font-size: 2rem;
+        font-family: var(--font-family-merienda);
+        padding-top: 5px;
+        padding-left: 3rem; }
+        @media screen and (max-width: 700px) {
+          .main__user .user__login .login__tell .tell__text {
+            font-size: 2rem;
+            padding-left: 0rem; } }
+        @media screen and (max-width: 580px) {
+          .main__user .user__login .login__tell .tell__text {
+            font-size: 15px; } }
+        @media screen and (max-width: 440px) {
+          .main__user .user__login .login__tell .tell__text {
+            font-size: 10px; } }
+      .main__user .user__login .login__tell .tell__put {
+        width: 40rem; }
+        @media screen and (max-width: 520px) {
+          .main__user .user__login .login__tell .tell__put {
+            width: 30rem;
+            height: 20px; } }
+        @media screen and (max-width: 440px) {
+          .main__user .user__login .login__tell .tell__put {
+            width: 20rem; } }
+
+.footer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem; }
+  .footer .footer__shap {
+    background-image: linear-gradient(to bottom right, #fef3ea, #e9e1c8a6);
+    height: 7rem; }
+    .footer .footer__shap .shap__text {
+      font-family: var(--font-family-merienda);
+      font-size: 2rem;
+      padding-top: 2rem;
+      align-items: center; }
+
+.wrapper {
+  padding: 1%;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 2rem;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)); }
+
+.wraper {
+  padding: 1%;
+  width: 80%;
+  margin: 0 auto; }
+
+.text-centre {
+  text-align: center;
+  font-family: var(--font-family-poppins); }
+
+.clear-fix {
+  float: none;
+  clear: both; }
+
+.tbl-full {
+  width: 100%;
+  font-family: "Poppins", sans-serif; }
+
+.tbl-30 {
+  width: 30%; }
+
+table tr th {
+  border-bottom: 1px solid black;
+  padding: 1%;
+  text-align: left; }
+
+table tr td {
+  padding: 1%; }
+
+.hadmin {
+  color: #426696; }
+
+.btn-zero {
+  background: linear-gradient(to right top, #cfc9e267, #57bff08c);
+  padding: 1%;
+  color: #426696;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 15px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif; }
+
+.btn-zero:hover {
+  background: linear-gradient(to right top, #6237f067, #18adf18c); }
+
+.btn-primary {
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  padding: 1%;
+  color: #426696;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif; }
+
+.btn-primary:hover {
+  background: linear-gradient(to right top, #06f5c9, #04dbfc); }
+
+.btn-secondary {
+  background: linear-gradient(to right top, #6cdbeb, #74f3b8);
+  padding: 1%;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif; }
+
+.btn-secondary:hover {
+  background: linear-gradient(to right top, #56dbf0, #0be881); }
+
+.btn-danger {
+  background: linear-gradient(to right top, #56dbf0, #db8581);
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif; }
+
+.btn-danger:hover {
+  background: linear-gradient(to right top, #56dbf0, #fa271c); }
+
+.success {
+  color: #2ed573;
+  font-family: "Poppins", sans-serif; }
+
+.failed {
+  color: #ff3f34;
+  font-family: "Poppins", sans-serif; }
+
+/* menu css */
+.menu {
+  border-bottom: 1px solid black;
+  font-family: "Poppins", sans-serif; }
+
+.menu ul {
+  list-style-type: none; }
+
+.menu ul li {
+  display: inline;
+  padding: 1%; }
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--color-main); }
+
+.menu ul li a:hover {
+  color: orangered; }
+
+/* menu css */
+/* main content css */
+.main-content {
+  background: linear-gradient(to right bottom, #fccd7f, #feb74d);
+  padding: 3% 0; }
+
+.col-4 {
+  width: 10%;
+  background-color: white;
+  margin: 1%;
+  padding: 2%;
+  float: left; }
+
+/* main content css */
+/* footer css */
+.foooter {
+  background-color: #f37d01;
+  color: white; }
+
+.login {
+  border: 1px solid grey;
+  width: 30%;
+  margin: 10% auto;
+  padding: 2%; }
+
+.nav-li {
+  color: #d9803e;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px; }
+
+.log {
+  background: linear-gradient(to right bottom, #fccd7f, #feb74d); }
+
+.login {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  border: none;
+  border-radius: 2rem; }
+
+.font {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px; }
+
+.fix-img-width {
+  width: 200px;
+  border-radius: 10px; }

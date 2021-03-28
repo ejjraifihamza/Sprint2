@@ -1,0 +1,60 @@
+.main__meals {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1%;
+  background-image: url(../img/see.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 17rem;
+}
+.size {
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+.box-3 {
+  width: 28%;
+  float: left;
+  margin: 2%;
+  @media only screen and (max-width: 890px) {
+    width: 100%;
+    margin: 4% auto;
+  }
+}
+.float-container {
+  position: relative;
+}
+.img-responsive {
+  width: 100%;
+}
+.img-curve {
+  border-radius: 15px;
+  width: 250px;
+  border: var(--color-main) solid 2px;
+}
+.float-text {
+  position: absolute;
+  font-size: 20px;
+  bottom: -20px;
+  left: 40%;
+  @media only screen and (max-width: 890px) {
+    left: 45%;
+  }
+}
+.text-white {
+  color: black;
+}
+.clearfix {
+  clear: both;
+  float: none;
+}

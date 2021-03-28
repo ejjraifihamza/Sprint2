@@ -1,0 +1,63 @@
+.main__food-search {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem;
+  .food-search__container {
+    background-image: url(../img/search.png);
+    width: 90%;
+    margin: auto;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 7% 0;
+    border-radius: 12rem;
+    .container__search {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5rem;
+      .search__button {
+        font-family: var(--font-family-merienda);
+        background-color: #f5b380;
+        border-radius: 2rem;
+        font-size: 2rem;
+        width: 10rem;
+        @media screen and (max-width: 700px) {
+          font-size: 2rem;
+        }
+        @media screen and (max-width: 580px) {
+          font-size: 15px;
+          width: 8rem;
+        }
+        @media screen and (max-width: 440px) {
+          font-size: 15px;
+          width: 8rem;
+        }
+      }
+      .search__button:hover {
+        background-color: #d37a37;
+      }
+    }
+    .container__search input[type="search"] {
+      font-family: var(--font-family-merienda);
+      width: 50%;
+      padding: 1%;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      @media screen and (max-width: 700px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 580px) {
+        font-size: 15px;
+      }
+      @media screen and (max-width: 440px) {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+.main__user {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 3rem;
+  .user__shap {
+    width: 90%;
+    border-radius: 17rem;
+    background-image: url("../img/login.png");
+    margin: auto;
+    padding-bottom: 3rem;
+    @media screen and (max-width: 786px) {
+      background-size: cover;
+    }
+  }
+  .user__title {
+    font-family: var(--font-family-merienda);
+    font-size: var(--font-size-main);
+    padding-top: 2rem;
+    text-shadow: 1px 1px 15px black;
+    color: black;
+    @media screen and (max-width: 700px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 580px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 440px) {
+      font-size: 10px;
+    }
+  }
+  .user__creat {
+    font-family: var(--font-family-merienda);
+    font-size: var(--font-size-main);
+    padding-top: 2rem;
+    text-shadow: 1px 1px 15px black;
+    @media screen and (max-width: 700px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 580px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 440px) {
+      font-size: 10px;
+    }
+
+    .creat {
+      text-decoration: none;
+      color: var(--color-main);
+      text-shadow: none;
+    }
+    .creat:hover {
+      color: #d35a04;
+    }
+  }
+  .user__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input[type="text"],
+    input[type="password"] {
+      width: 50%;
+      padding: 12px 20px;
+      margin: auto;
+      display: inline-block;
+      border: 2px solid var(--color-main);
+      border-radius: 15px;
+      box-sizing: border-box;
+      font-family: var(--font-family-merienda);
+    }
+    button {
+      width: 20%;
+      text-align: center;
+      margin-top: 2rem;
+      border-radius: 15px;
+      font-size: 3rem;
+      font-family: var(--font-family-merienda);
+      @media screen and (max-width: 700px) {
+        width: 15%;
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 520px) {
+        font-size: 15px;
+      }
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    .login__usname {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2rem;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+      .usname__text {
+        font-size: 2rem;
+        font-family: var(--font-family-merienda);
+        padding-top: 5px;
+        @media screen and (max-width: 700px) {
+          font-size: 2rem;
+        }
+        @media screen and (max-width: 580px) {
+          font-size: 15px;
+        }
+        @media screen and (max-width: 440px) {
+          font-size: 10px;
+        }
+      }
+      .usname__put {
+        width: 40rem;
+        @media screen and (max-width: 520px) {
+          width: 30rem;
+          height: 20px;
+        }
+        @media screen and (max-width: 440px) {
+          width: 20rem;
+        }
+      }
+    }
+    .login__password {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2rem;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+      .password__text {
+        font-size: 2rem;
+        font-family: var(--font-family-merienda);
+        padding-top: 5px;
+        @media screen and (max-width: 700px) {
+          font-size: 2rem;
+        }
+        @media screen and (max-width: 580px) {
+          font-size: 15px;
+        }
+        @media screen and (max-width: 440px) {
+          font-size: 10px;
+        }
+      }
+      .password__put {
+        width: 40rem;
+        @media screen and (max-width: 520px) {
+          width: 30rem;
+          height: 20px;
+        }
+        @media screen and (max-width: 440px) {
+          width: 20rem;
+        }
+      }
+    }
+    .login__tell {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2rem;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+      .tell__text {
+        font-size: 2rem;
+        font-family: var(--font-family-merienda);
+        padding-top: 5px;
+        padding-left: 3rem;
+        @media screen and (max-width: 700px) {
+          font-size: 2rem;
+          padding-left: 0rem;
+        }
+        @media screen and (max-width: 580px) {
+          font-size: 15px;
+        }
+        @media screen and (max-width: 440px) {
+          font-size: 10px;
+        }
+      }
+      .tell__put {
+        width: 40rem;
+        @media screen and (max-width: 520px) {
+          width: 30rem;
+          height: 20px;
+        }
+        @media screen and (max-width: 440px) {
+          width: 20rem;
+        }
+      }
+    }
+  }
+}
